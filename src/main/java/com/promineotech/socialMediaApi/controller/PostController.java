@@ -30,7 +30,7 @@ public class PostController {
 	}
 	
 	@RequestMapping(value = "/{postId}", method = RequestMethod.PUT)
-	public ResponseEntity<Object> updatePost(@PathVariable Post post, @PathVariable Long postId) {
+	public ResponseEntity<Object> updatePost(@RequestBody Post post, @PathVariable Long postId) {
 		try {
 			return new ResponseEntity<Object>(service.updatePost(post, postId), HttpStatus.OK);
 		} catch (Exception e) {
